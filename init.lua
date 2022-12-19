@@ -28,7 +28,8 @@ map("n", "<C-s>", ":NvimTreeToggle<CR>", { silent = true })
 
 -- Plugin manager 
 require "paq" {
-    "savq/paq-nvim";    -- Let Paq manage itself
+    -- Let Paq manage itself
+    "savq/paq-nvim";
 
     -- Code analysis or something idk
     {
