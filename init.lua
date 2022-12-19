@@ -22,9 +22,6 @@ vim.opt.hlsearch = false
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- I hate this
--- vim.opt.runtimepath:append(',~/.config/nvim/lua/')
-
 local map = require("utils").map
 map("n", "<C-s>", ":NvimTreeToggle<CR>", { silent = true })
 

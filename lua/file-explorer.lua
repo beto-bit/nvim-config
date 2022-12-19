@@ -19,14 +19,31 @@ require('nvim-tree').setup({
 -- Auto Open
 function tab_enter()
     local view = require("nvim-tree.view")
+
+    local bufname = vim.api.nvim_buf_get_name(0)
+    local ft = vim.api.nvim_buf_get_option(0, "ft")
+
     if view.is_visible { any_tabpage = true } then
+    
+        -- Loop over ignored files
+        for _, filter in ipairs({}) do
+            if bufname:match(filter) ~= nil or ft:match(filter) ~= nil then
+                return
+            end
+        end
+
         view.open { focus_tree = false }
         require("nvim-tree.renderer").draw()
     end
 end
 
 local augroup_id = vim.api.nvim_create_augroup("NvimTree", { clear = true })
-vim.api.nvim_create_autocmd("TabEnter", vim.tbl_extend("force", { group = augroup_id }, { callback = vim.schedule_wrap(tab_enter) }))
+vim.api.nvim_create_autocmd("TabEnter",
+    vim.tbl_extend("force",
+        { group = augroup_id },
+        { callback = vim.schedule_wrap(tab_enter) }
+    )
+)
 
 
 -- Auto close nvim-tree, may break later 
