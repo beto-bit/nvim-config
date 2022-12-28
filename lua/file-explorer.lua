@@ -10,13 +10,14 @@ require('nvim-tree').setup({
     renderer = {
         add_trailing = true,
     },
+    git = { ignore = false },
     -- I do not put `open = true` here because of a strange bug :^)
     tab = {
-        sync = {close = true }
+        sync = { close = true }
     }
 })
 
-require('opensync-fix')
+require('sync-open-fix')
 
 -- Auto close nvim-tree, may break later 
 -- Here more approaches: https://github.com/nvim-tree/nvim-tree.lua/wiki/Auto-Close

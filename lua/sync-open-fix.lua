@@ -40,3 +40,4 @@ local function my_setup(opts)
 end
 
 my_setup(true)
+

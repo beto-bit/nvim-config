@@ -9,9 +9,9 @@ vim.opt.number = true
 vim.opt.termguicolors = true
 
 -- Space are way better than tabs
+vim.opt.tabstop = 4 	-- Tabs are four (just in case)
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4 	-- Tabs are four (just in case)
 
 -- Better search
 vim.opt.ignorecase = true
