@@ -69,6 +69,12 @@ require "paq" {
     -- One Dark Vim
     "navarasu/onedark.nvim";
 
+    -- Midnight theme
+    "TheMidnightShow/starry_night.nvim";
+
+    -- Ayu theme
+    "Shatur/neovim-ayu";
+
     -- Tabs
     "akinsho/bufferline.nvim";
 
@@ -86,7 +92,20 @@ require "paq" {
 
     -- Close hidden buffers
     "arithran/vim-delete-hidden-buffers";
+
+    -- Hope this makes Zig pretty
+    "ziglang/zig.vim";
 }
+
+-- Ayu theme
+require('ayu').setup({ mirage = true })
+require('ayu').colorscheme()
+
+-- One Dark
+-- require('onedark').setup {
+--     style = 'cool',
+-- }
+-- require('onedark').load()
 
 -- That bar down
 require('lualine').setup {
@@ -114,11 +133,4 @@ require('terminal')
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 lsp.setup()
-
-
--- Mah theme
-require('onedark').setup {
-    style = 'cool',
-}
-require('onedark').load()
 
