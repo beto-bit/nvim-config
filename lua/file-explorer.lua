@@ -1,7 +1,7 @@
 -- File Explorer
 require('nvim-tree').setup({
-    open_on_setup = true,
-    open_on_setup_file = false,
+    -- open_on_setup = true,
+    -- open_on_setup_file = false,
     sort_by = 'case_sensitive',
     view = {
         adaptive_size = true,
@@ -16,6 +16,14 @@ require('nvim-tree').setup({
         sync = { close = true }
     }
 })
+
+-- Open on Setup replacement
+local function open_nvim_tree()
+    require('nvim-tree.api').tree.open()
+end
+
+vim.api.nvim_create_autocmd({'VimEnter'}, {callback = open_nvim_tree})
+
 
 require('sync-open-fix')
 
