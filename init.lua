@@ -75,6 +75,9 @@ require "paq" {
     -- Ayu theme
     "Shatur/neovim-ayu";
 
+    -- Tokyonight
+    "folke/tokyonight.nvim";
+
     -- Tabs
     "akinsho/bufferline.nvim";
 
@@ -96,6 +99,9 @@ require "paq" {
     -- Hope this makes Zig pretty
     "ziglang/zig.vim";
 }
+
+-- Tokyonight theme
+-- vim.cmd("colorscheme tokyonight-night")
 
 -- Ayu theme
 require('ayu').setup({ mirage = true })
