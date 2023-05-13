@@ -34,7 +34,7 @@ require "paq" {
     -- Code analysis or something idk
     {
         "nvim-treesitter/nvim-treesitter",
-        run = function() vim.cmd "TSUpdate" end
+        run = 'TSUpdate',
     };
 
     -- LaTeX for some reason
@@ -139,4 +139,40 @@ require('terminal')
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 lsp.setup()
+
+-- Better treesitter works
+require('nvim-treesitter.configs').setup {
+    highlight = {
+        enable = true,
+    },
+    ensure_installed = {
+        'lua',
+
+        -- Web
+        'css',
+        'scss',
+        'html',
+        'json',
+        'javascript',
+        'typescript',
+        'tsx',
+
+        -- Low level shit
+        'arduino',
+        'c',
+        'cpp',
+        'rust',
+        'make',
+        'zig',
+
+        -- Other
+        'bash',
+        'c_sharp',
+        'gitignore',
+        'gitattributes',
+        'python',
+        'toml',
+        'java',
+    },
+}
 
