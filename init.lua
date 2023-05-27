@@ -63,8 +63,8 @@ require "paq" {
 
 
     -- Cool status line
-    "nvim-lualine/lualine.nvim";
     "kyazdani42/nvim-web-devicons";
+    "nvim-lualine/lualine.nvim";
 
     -- One Dark Vim
     "navarasu/onedark.nvim";
@@ -115,11 +115,21 @@ require('ayu').colorscheme()
 
 -- That bar down
 require('lualine').setup {
-    options = { theme = 'horizon' }
+    options = { theme = 'horizon' },
     -- options = { theme = 'dracula' }
     -- options = { theme = 'palenight' }
     -- options = { theme = 'solarized_dark' }
+    sections = {
+        lualine_b = {
+        'branch',
+        'diff',
+        {
+            'diagnostics',
+            symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+        }},
+    },
 }
+
 
 -- File Explorer
 require('file-explorer')
