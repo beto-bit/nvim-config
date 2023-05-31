@@ -119,15 +119,6 @@ require('lualine').setup {
     -- options = { theme = 'dracula' }
     -- options = { theme = 'palenight' }
     -- options = { theme = 'solarized_dark' }
-    sections = {
-        lualine_b = {
-        'branch',
-        'diff',
-        {
-            'diagnostics',
-            symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
-        }},
-    },
 }
 
 
