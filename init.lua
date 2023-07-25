@@ -62,27 +62,23 @@ require "paq" {
     {'rafamadriz/friendly-snippets'};
 
 
-    -- Cool status line
-    "kyazdani42/nvim-web-devicons";
-    "nvim-lualine/lualine.nvim";
+    -- ======== THEMES ========
+    "navarasu/onedark.nvim";                -- One Dark Vim
+    "TheMidnightShow/starry_night.nvim";    -- Midnight theme
+    "Shatur/neovim-ayu";                    -- Ayu theme
+    "folke/tokyonight.nvim";                -- Tokyonight
 
-    -- One Dark Vim
-    "navarasu/onedark.nvim";
 
-    -- Midnight theme
-    "TheMidnightShow/starry_night.nvim";
-
-    -- Ayu theme
-    "Shatur/neovim-ayu";
-
-    -- Tokyonight
-    "folke/tokyonight.nvim";
-
+    -- ======== UTIL ========
     -- Tabs
     "akinsho/bufferline.nvim";
 
     -- Tree (Folder structure)
     "nvim-tree/nvim-tree.lua";
+
+    -- Cool status line
+    "kyazdani42/nvim-web-devicons";
+    "nvim-lualine/lualine.nvim";
 
     -- Cool indentation lines
     "lukas-reineke/indent-blankline.nvim";
@@ -100,27 +96,12 @@ require "paq" {
     "ziglang/zig.vim";
 }
 
--- Tokyonight theme
--- vim.cmd("colorscheme tokyonight-night")
 
--- Ayu theme
-require('ayu').setup({ mirage = true })
-require('ayu').colorscheme()
+-- Auto delete hidden buffers
+vim.cmd 'au TabEnter,TabLeave * :DeleteHiddenBuffers'
 
--- One Dark
--- require('onedark').setup {
---     style = 'cool',
--- }
--- require('onedark').load()
-
--- That bar down
-require('lualine').setup {
-    options = { theme = 'horizon' },
-    -- options = { theme = 'dracula' }
-    -- options = { theme = 'palenight' }
-    -- options = { theme = 'solarized_dark' }
-}
-
+-- Color themes
+require('colors')
 
 -- File Explorer
 require('file-explorer')
@@ -162,13 +143,20 @@ require('nvim-treesitter.configs').setup {
         'arduino',
         'c',
         'cpp',
+        'cmake',
         'rust',
         'make',
         'zig',
 
+        -- Graphics
+        'glsl',
+        'hlsl',
+
         -- Other
         'bash',
+        'comment',
         'c_sharp',
+        'diff',
         'gitignore',
         'gitattributes',
         'python',
