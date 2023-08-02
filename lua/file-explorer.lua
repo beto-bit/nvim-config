@@ -4,8 +4,8 @@ require('nvim-tree').setup({
     -- open_on_setup_file = false,
     sort_by = 'case_sensitive',
     view = {
-        adaptive_size = true,
-        width = 20,
+        adaptive_size = false,
+        width = 28,
     },
     renderer = {
         add_trailing = true,
