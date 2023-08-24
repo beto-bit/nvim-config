@@ -41,7 +41,7 @@ require "paq" {
     { "lervag/vimtex", opt=true };
 
     -- Simple LSP
-    "VonHeikemen/lsp-zero.nvim";
+    { "VonHeikemen/lsp-zero.nvim", branch="v1.x" };
 
     -- Not so simple LSP dependencies
     -- LSP Support
@@ -64,7 +64,6 @@ require "paq" {
 
     -- ======== THEMES ========
     "navarasu/onedark.nvim";                -- One Dark Vim
-    "TheMidnightShow/starry_night.nvim";    -- Midnight theme
     "Shatur/neovim-ayu";                    -- Ayu theme
     "folke/tokyonight.nvim";                -- Tokyonight
 
