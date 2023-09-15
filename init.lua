@@ -69,6 +69,9 @@ require "paq" {
 
 
     -- ======== UTIL ========
+    -- Autoclose pairs of x
+    "windwp/nvim-autopairs";
+
     -- Tabs
     "akinsho/bufferline.nvim";
 
@@ -113,6 +116,9 @@ require('indentation')
 
 -- Ctrl + Ñ (I wish I could do Ctrl+ñ)
 require('terminal')
+
+-- autopairs
+require("autopairs")
 
 -- require('gitsigns').setup()
 
