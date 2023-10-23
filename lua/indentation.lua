@@ -1,4 +1,9 @@
-require('indent_blankline').setup {
-    show_current_context = true,
-    show_first_indent_level = false,
+-- This is for ident-line 3.x
+require('ibl').setup {
+    scope = {
+        enabled = false,
+        show_start = false,
+        show_end = false,
+    },
 }
+

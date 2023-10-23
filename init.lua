@@ -34,7 +34,7 @@ require "paq" {
     -- Code analysis or something idk
     {
         "nvim-treesitter/nvim-treesitter",
-        run = 'TSUpdate',
+        build = ':TSUpdateSync',
     };
 
     -- LaTeX for some reason
@@ -83,10 +83,10 @@ require "paq" {
     "nvim-lualine/lualine.nvim";
 
     -- Cool indentation lines
-    "lukas-reineke/indent-blankline.nvim";
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} };
 
     -- I'm using a terminal program inside a terminal program
-    {"akinsho/toggleterm.nvim", tag = '*'};
+    { "akinsho/toggleterm.nvim", tag = '*' };
 
     -- The power of git
     -- "lewis6991/gitsigns.nvim";
