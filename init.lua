@@ -26,7 +26,7 @@ require('plugins')
 
 require('loox')
 
-require('treesitter')
+-- require('treesitter')
 
 -- Fine command line
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
