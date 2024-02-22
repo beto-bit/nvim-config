@@ -51,42 +51,7 @@ require('lazy').setup {
     -- Treesitter
     {
         'nvim-treesitter/nvim-treesitter',
-        -- build = ':TSUpdate',
-        config = function()
-            local configs = require('nvim-treesitter.configs')
-
-            configs.setup {
-                highlight = {
-                    enable = true
-                },
-                sync_install = false,
-                ensure_installed = {
-                    'lua',
-
-                    -- Web
-                    'css',
-                    'html',
-                    'json',
-                    'javascript',
-                    'typescript',
-
-                    -- Low level shit
-                    'c',
-                    'cpp',
-                    'cmake',
-                    'rust',
-                    'make',
-                    'zig',
-            
-                    -- Other
-                    'bash',
-                    'diff',
-                    'gitignore',
-                    'gitattributes',
-                    'python',
-                    'toml'
-                }
-            }
-        end
+        build = ':TSUpdate',
+        config = function() require('treesitter') end
     },
 }
