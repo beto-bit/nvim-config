@@ -54,4 +54,26 @@ require('lazy').setup {
         build = ':TSUpdate',
         config = function() require('treesitter') end
     },
+
+    -- LSP
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        lazy = true,
+        config = false,
+    },
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = { 'hrsh7th/cmp-nvim-lsp' }
+    },
+
+    -- Mason
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+
+    -- Autocompletion
+    {
+        'hrsh7th/nvim-cmp',
+        dependencies = { 'L3MON4D3/LuaSnip' }
+    }
 }
