@@ -5,11 +5,15 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
-require('mason').setup {}
+require('mason').setup {
+    ui = { border = 'shadow' }
+}
 require('mason-lspconfig').setup {
-    handlers =  { lsp_zero.default_setup }
+    handlers =  { lsp_zero.default_setup },
 }
 
+
+-- Floating windows thingies?
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 

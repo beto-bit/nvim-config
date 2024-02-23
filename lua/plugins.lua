@@ -55,6 +55,13 @@ require('lazy').setup {
         config = function() require('treesitter') end
     },
 
+    -- Telescope
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
