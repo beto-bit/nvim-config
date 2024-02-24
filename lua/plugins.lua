@@ -42,10 +42,14 @@ require('lazy').setup {
         init = function() vim.cmd 'au TabEnter,TabLeave * :DeleteHiddenBuffers' end
     },
 
-    -- Fine command line
+    -- Cool looking command line
     {
-        'VonHeikemen/fine-cmdline.nvim',
-        dependencies = { 'MunifTanjim/nui.nvim' }
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify'
+        }
     },
 
     -- Treesitter
@@ -90,8 +94,9 @@ require('lazy').setup {
     'williamboman/mason-lspconfig.nvim',
 
     -- Autocompletion
+    'hrsh7th/cmp-cmdline',
     {
         'hrsh7th/nvim-cmp',
         dependencies = { 'L3MON4D3/LuaSnip' }
-    }
+    },
 }

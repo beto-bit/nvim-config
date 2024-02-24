@@ -28,8 +28,7 @@ require('loox')
 
 require('zero')
 
--- Fine command line
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+require('noisy')
 
 -- Toggle File Explorer
 vim.api.nvim_set_keymap('n', '<C-s>', '<cmd>NvimTreeToggle<CR>', { silent = true })
