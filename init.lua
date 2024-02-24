@@ -31,3 +31,5 @@ require('zero')
 -- Fine command line
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
 
+-- Toggle File Explorer
+vim.api.nvim_set_keymap('n', '<C-s>', '<cmd>NvimTreeToggle<CR>', { silent = true })
