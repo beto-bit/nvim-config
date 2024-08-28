@@ -17,6 +17,8 @@ require('mason-lspconfig').setup {
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
+-- Remove old <C-f> and <C-b> bindings
+
 cmp.setup {
     -- Select first item
     preselect = 'item',
@@ -52,7 +54,7 @@ cmp.setup {
 }
 
 -- Search autocompletion
-cmp.setup.cmdline('/',
+cmp.setup.cmdline({ '/', '?' },
     {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {

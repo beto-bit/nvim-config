@@ -21,6 +21,9 @@ require('nvim-treesitter.configs').setup {
         'make',
         'zig',
 
+        -- I hate this shit
+        'java',
+
         -- Other
         'bash',
         'diff',
