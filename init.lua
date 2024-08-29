@@ -22,6 +22,5 @@ vim.opt.hlsearch = false
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
 -- Plugin manager
 require('config.lazy')
