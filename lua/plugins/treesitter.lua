@@ -35,7 +35,8 @@ return {
                     'gitignore',
                     'gitattributes',
                     'python',
-                    'toml'
+                    'toml',
+                    'regex',
                 }
             }
         end
