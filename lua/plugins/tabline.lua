@@ -5,5 +5,5 @@ return {
         opts = {},
     },
     { 'nvim-tree/nvim-web-devicons' },
-    { 'lewis6991/gitsigns.nvim' },
+    { 'lewis6991/gitsigns.nvim', lazy = true },
 }
