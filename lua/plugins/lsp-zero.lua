@@ -26,21 +26,54 @@ end
 -- Autocompletion
 local cmp_nvim_lsp_config = function()
     local cmp = require('cmp')
+    local cmp_action = require('lsp-zero').cmp_action()
+    local cmp_format = require('lsp-zero').cmp_format{ details = true }
+
+    require('luasnip.loaders.from_vscode').lazy_load()
     
     cmp.setup {
         sources = {
             { name = 'nvim_lsp' },
+            { name = 'luasnip' },
         },
+
+        -- Preselect first item
+        preselect = 'item',
+        completion = {
+            completeopt = 'menu,menuone,noinsert',
+        },
+
+        -- Mappings
         mapping = cmp.mapping.preset.insert {
             ['<C-Space>'] = cmp.mapping.complete(),
             ['<C-u>'] = cmp.mapping.scroll_docs(-4),
             ['<C-d>'] = cmp.mapping.scroll_docs(4),
+
+            -- Press enter to confirm selection
+            ['<CR>'] = cmp.mapping.confirm{ select = false },
+
+            ['<Tab>'] = cmp_action.luasnip_supertab(),
+            ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+
+            -- Select next and previous item
+            ['<C-K>'] = cmp_action.luasnip_jump_forward(),
+            ['<C-J>'] = cmp_action.luasnip_jump_backward(),
+            ['<C-E>'] = cmp_action.luasnip_next(),
         },
+
+        --Completion menu borders
+        window = {
+            completion = cmp.config.window.bordered(),
+            documentation = cmp.config.window.bordered(),
+        },
+
         snippet = {
             expand = function(args)
-                vim.snippet.expand(args.body)
+                require('luasnip').lsp_expand(args.body)
             end
         },
+
+        formatting = cmp_format,
     }
 end
 
@@ -49,7 +82,12 @@ local nvim_lspconfig = function()
     lsp_zero = require('lsp-zero')
     
     lsp_zero.extend_lspconfig {
-        sign_text = true,
+        sign_text = {
+            error = '✘',
+            warn = '▲',
+            hint = '⚑',
+            info = '»',
+        },
         lsp_attach = lsp_attach,
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
     }
