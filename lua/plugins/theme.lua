@@ -1,15 +1,16 @@
 return {
-    { 'navarasu/onedark.nvim', opts = { style = 'darker', } },
     { 'folke/tokyonight.nvim' },
     { 'rebelot/kanagawa.nvim' },
     { '0xstepit/flow.nvim' },
     { 'EdenEast/nightfox.nvim' },
+    -- { 'olimorris/onedarkpro.nvim' },
+    { 'Shatur/neovim-ayu' },
     {
-        'Shatur/neovim-ayu',
+        'olimorris/onedarkpro.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            require('ayu').colorscheme()
+            vim.cmd [[colorscheme onedark_dark]]
         end
     },
 }
