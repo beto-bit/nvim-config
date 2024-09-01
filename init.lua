@@ -13,6 +13,9 @@ vim.opt.tabstop = 4 	-- Tabs are four (just in case)
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 
+-- Scrolloff
+vim.opt.scrolloff = 2
+
 -- Better search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
