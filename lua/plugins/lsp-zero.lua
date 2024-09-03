@@ -1,3 +1,9 @@
+-- This is for rounded floating windows
+local handlers_round = {
+    ['textDocument/hover'] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
+    ['textDocument/signatureHelp'] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'rounded'}),
+}
+
 local lsp_attach = function(client, bufnr)
     local opts = {buffer = bufnr}
     local wk = require('which-key')
@@ -96,7 +102,7 @@ local nvim_lspconfig = function()
         ensure_installed = {},
         handlers = {
             function(server_name)
-                require('lspconfig')[server_name].setup{}
+                require('lspconfig')[server_name].setup{ handlers = handlers_round }
             end
         }
     }

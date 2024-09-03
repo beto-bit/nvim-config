@@ -32,4 +32,8 @@ require("lazy").setup({
   install = { colorscheme = { "ayu-dark" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+
+  ui = {
+    border = "rounded"
+  },
 })
