@@ -37,6 +37,7 @@ return {
                     'python',
                     'toml',
                     'regex',
+                    'sql',
                 }
             }
         end

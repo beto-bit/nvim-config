@@ -1,7 +1,17 @@
 -- This is for rounded floating windows
 local handlers_round = {
-    ['textDocument/hover'] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
-    ['textDocument/signatureHelp'] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'rounded'}),
+    ['textDocument/hover'] = vim.lsp.with(
+        vim.lsp.handlers.hover, { border = 'rounded' }
+    ),
+
+    ['textDocument/signatureHelp'] = vim.lsp.with(
+        vim.lsp.handlers.signature_help, { border = 'rounded' }
+    ),
+}
+
+-- And this for another floating windows (for some reason)
+vim.diagnostic.config {
+    float = { border = 'rounded' }
 }
 
 local lsp_attach = function(client, bufnr)
@@ -11,6 +21,7 @@ local lsp_attach = function(client, bufnr)
     -- My keybinds
     wk.add {
         { 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', desc = 'Inspect Item', opts },
+        { 'gK', '<cmd>lua vim.diagnostic.open_float()<cr>', desc = 'Show Diagnostics', opts },
         { 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', desc = 'Jump to Definition', opts },
         { 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', desc = 'Jump to Declaration', opts },
         { 'gi', 'cmd>lua vim.lsp.buf.implementation()<cr>', desc = 'Jump to Implementation', opts },
