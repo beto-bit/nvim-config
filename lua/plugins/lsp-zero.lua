@@ -1,3 +1,14 @@
+-- Add borders to floating windows
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {border = 'rounded'}
+)
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {border = 'rounded'}
+)
+
+
 -- This is for rounded floating windows
 local handlers_round = {
     ['textDocument/hover'] = vim.lsp.with(
@@ -92,6 +103,17 @@ local cmp_nvim_lsp_config = function()
 
         formatting = cmp_format,
     }
+
+    -- Add borders to floating windows
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+      vim.lsp.handlers.hover,
+      {border = 'rounded'}
+    )
+
+    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+      vim.lsp.handlers.signature_help,
+      {border = 'rounded'}
+    )
 end
 
 -- Config for LSP client
