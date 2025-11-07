@@ -28,6 +28,7 @@ return {
 
                     -- I hate this shit
                     'java',
+                    'pascal',
 
                     -- Other
                     'bash',
