@@ -32,4 +32,8 @@ vim.g.mapleader = ' '
 -- Window style
 vim.o.winborder = 'rounded'
 
+-- Spell check
+vim.opt.spelllang = { 'es', 'en' }
+-- vim.opt.spell = true
+
 require('keymaps')
